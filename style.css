@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+
+    color:white;
+    background-color: #191720;
+}
+
+main{
+    font-family: 'Nunito Sans', sans-serif;
+    height: 100vh;
+    width: 100%;
+}
+
+.right{
+    padding: 50px;
+}
+
+.logo-right,
+.logo-right,
+svg{
+    height: 300px;
+    width: 500px;
+}
+
+.join{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.join h1{
+    font-size: 5em;
+    font-weight: 600;
+}
+
+.join h2{
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.join p{
+    font-size: 2.2em;
+    font-weight: 600;
+}
