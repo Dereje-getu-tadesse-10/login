@@ -47,20 +47,7 @@ svg{
     gap: 20px;
 }
 
-.join h1{
-    font-size: 2em;
-    font-weight: 600;
-}
 
-.join h2{
-    font-size: 1em;
-    font-weight: 600;
-}
-
-.join p{
-    font-size: 1em;
-    font-weight: 600;
-}
 form{
     margin: 50px auto;
 }
@@ -101,6 +88,23 @@ button[type="submit"]{
 }
 
 @media only screen and (min-width: 200px) {
+    .join,
+    h2,
+    h3{
+        font-weight: 500;
+    }
+    .join,
+    h2{
+        font-size: 16px;
+    }
+    .join,
+    h3{
+        font-size: 24px;
+    }
+    .join,
+    p{
+        font-size: 14px;
+    }
     button[type="submit"]{
         width: 100%;
     }
