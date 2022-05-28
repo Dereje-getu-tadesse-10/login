@@ -14,7 +14,7 @@
             href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
             rel="stylesheet"
     />
-    <title>Title</title>
+    <title>Sing up</title>
 </head>
 <body>
 <main>
@@ -151,17 +151,17 @@
             </div>
         </div>
 
-        <form>
+        <form method="POST">
             <div class="email">
                 <label for="email">Email address</label>
                 <input type="email" />
-                <span></span>
+                <span class="errMail"></span>
             </div>
 
             <div class="password">
                 <label for="password">password</label>
                 <input type="password" />
-                <span></span>
+                <span class="errPass"></span>
             </div>
 
             <button type="submit">Sing in</button>
@@ -174,5 +174,7 @@
         </p>
     </section>
 </main>
+
+<script src="app.js"></script>
 </body>
 </html>

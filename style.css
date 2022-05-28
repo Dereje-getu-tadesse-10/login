@@ -225,11 +225,11 @@ button[type="submit"]{
 
     input[type="email"],
     input[type="password"],
-    button[type="submit"]{
+    button{
         height: 62px;
     }
 
-    button[type="submit"]{
+    button{
         font-size: 18px;
     }
 }
