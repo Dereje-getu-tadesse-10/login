@@ -8,21 +8,41 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
     let emailValue = email.value
     let passwordValue = password.value
-    console.log(errMail)
-
+    // email
     if(emailValue === ""){
         email.style.border= '2px solid #D22947'
     }
-    else if (!regExMail(emailValue)) {
+    else if(!regExMail(emailValue)) {
         email.style.border= '2px solid #D22947'
         errMail.textContent = 'Please enter a valid address mail';
+    }else{
+        email.style.border= ''
     }
-
+    // pass
     if (passwordValue === "") {
-
-    }else if (passwordValue < 8) {
-        errPass.textContent = "Please enter a valid password"
+        password.style.border= '2px solid #D22947'
+    }else{
+        password.style.border= ''
     }
+
+    const data = new FormData()
+
+    data.append('email', emailValue)
+    data.append('password', passwordValue)
+
+    let config = {
+        method: "POST",
+        body: data
+    }
+
+    fetch('script.php', config)
+    .then((res)=>{
+        return res.json()
+    })
+    .then((data)=>{
+        console.log(data)
+    })
+
 
 
 
