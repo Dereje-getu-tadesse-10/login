@@ -4,7 +4,7 @@ const password = document.querySelector('input[type="password"]')
 const errMail = document.querySelector('.errMail')
 const errPass = document.querySelector('.errPass')
 const existOrnot = document.querySelector('.exist-not-exist')
-
+console.log(form);
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     let emailValue = email.value
