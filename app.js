@@ -39,28 +39,24 @@ form.addEventListener('submit', (e) => {
         body: data
     }
 
-    fetch('script.php', config)
+    fetch('sing-up.php', config)
     .then((res)=>{
         return res.json()
     })
     .then((data)=>{
-        if(data.failed){
-            existOrnot.textContent = 'utilisateur existe deja ! vous aller etre rediriger vers la page de connexion';
+        if(data.success){
+            existOrnot.textContent = 'Merci ! vous aller etre rediriger vers la page de connexion';
             setTimeout(()=>{
                 window.location.href = "index.php"
             }, 6000);
-            
+
         }
-
-
-
     })
 
 
 
 
 })
-
 function regExMail(email) {
     let isValid = 0;
     const regEx =
