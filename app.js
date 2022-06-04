@@ -3,6 +3,7 @@ const email = document.querySelector('input[type="email"]')
 const password = document.querySelector('input[type="password"]')
 const errMail = document.querySelector('.errMail')
 const errPass = document.querySelector('.errPass')
+const existOrnot = document.querySelector('.exist-not-exist')
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -21,7 +22,7 @@ form.addEventListener('submit', (e) => {
     // pass
     if (passwordValue === "") {
         password.style.border= '2px solid #D22947'
-    } if(passwordValue.length < 8){
+    }else if(passwordValue.length < 8){
         password.style.border= '2px solid #D22947'
         errPass.textContent = 'Mot de passe trop court';
     }else{
@@ -43,7 +44,16 @@ form.addEventListener('submit', (e) => {
         return res.json()
     })
     .then((data)=>{
-        console.log(data)
+        if(data.failed){
+            existOrnot.textContent = 'utilisateur existe deja ! vous aller etre rediriger vers la page de connexion';
+            setTimeout(()=>{
+                window.location.href = "index.php"
+            }, 6000);
+            
+        }
+
+
+
     })
 
 
