@@ -21,6 +21,9 @@ form.addEventListener('submit', (e) => {
     // pass
     if (passwordValue === "") {
         password.style.border= '2px solid #D22947'
+    } if(passwordValue.length < 8){
+        password.style.border= '2px solid #D22947'
+        errPass.textContent = 'Mot de passe trop court';
     }else{
         password.style.border= ''
     }
