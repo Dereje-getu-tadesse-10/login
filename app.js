@@ -44,13 +44,14 @@ form.addEventListener('submit', (e) => {
         return res.json()
     })
     .then((data)=>{
-        if(data.success){
-            existOrnot.textContent = 'Merci ! vous aller etre rediriger vers la page de connexion';
-            setTimeout(()=>{
-                window.location.href = "index.php"
-            }, 6000);
+        console.log(data);
+        // if(data.success){
+        //     existOrnot.textContent = 'Merci !';
+        //     setTimeout(()=>{
+        //         window.location.href = "welcome.html"
+        //     }, 6000);
 
-        }
+        // }
     })
 
 

@@ -16,7 +16,7 @@
     <main>
         <section class="left">
             <img src="./assets/background-purple-and-pink-letter-blocks-pattern-pattern-image.jpg" alt="art abstrait et block violet et bleu" />
-
+            <!-- $title = "Welcome back !"; -->
 
         </section>
         <section class="right">
@@ -40,8 +40,10 @@
                     </defs>
                 </svg>
             </div>
+
             <h1 class="sing-in">Welcome !</h1>
-            <form method="POST">
+
+            <form action="logout.php" method="post">
                 <div class="email">
                     <p>Congratulations, you are</p>
                     <p>part of the binary tribe !</p>
@@ -52,15 +54,13 @@
                     <p>and read our latest articles.</p>
                 </div>
 
-                <button type="submit">Great blog</button>
+                <button type="submit" name="logout">Great blog</button>
             </form>
 
 
 
         </section>
     </main>
-
-    <script src="./app.js"></script>
 </body>
 
 </html>

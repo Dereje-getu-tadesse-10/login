@@ -22,10 +22,10 @@ formLogin.addEventListener('submit', (e) => {
     .then((res)=>{return res.json()})
     .then((data)=>{
         if(data.success){
-            window.location.href = "welcome.php"
+            window.location.href = "welcome.html"
             console.log("connecter");
         }else{
-            existOrnot.textContent = 'utilisateur n\'existe pas !';
+            existOrnot.textContent = 'Email ou password incorrect';
         }
         console.log(data);
     })

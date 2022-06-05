@@ -18,19 +18,24 @@ if (empty($_POST['email'])) {
 }
 
 if (empty($errs)) {
+    
     require_once 'conn.php';
     $hashedPass = password_hash($passwordSingUp, PASSWORD_DEFAULT);
-    $sql = 'INSERT INTO `user` (`email`, `mot_de_passe`) VALUES (:email, :password)';
+    $sql = 'INSERT INTO `user` (`email`, `mot_de_passe`) SELECT * FROM (SELECT :email, :password) AS tmp WHERE NOT EXISTS (SELECT email FROM user WHERE email = :email)';
     $query = $conn->prepare($sql);
     $query->bindValue(':email', $emailSingUp, PDO::PARAM_STR);
     $query->bindValue(':password', $hashedPass, PDO::PARAM_STR);
     $query->execute();
 
     if ($query) {
+        session_start();
+        $_SESSION['user'] = $user;
         $success = array('success' => "inscription reussi");
         echo json_encode($success);
     } else {
         $failed = array('failed' => "inscription echoue");
         echo json_encode($failed);
     }
+
+
 }
